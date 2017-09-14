@@ -145,6 +145,18 @@ public class Principal extends javax.swing.JFrame {
         tf_NAlasSalamandras1 = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
         cb_Salamandras = new javax.swing.JComboBox<Salamandras>();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        cb_player1 = new javax.swing.JComboBox<Hadas>();
+        jLabel55 = new javax.swing.JLabel();
+        cb_player2 = new javax.swing.JComboBox<Hadas>();
+        pg1 = new javax.swing.JProgressBar();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        pg2 = new javax.swing.JProgressBar();
+        jLabel58 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
+        jLabel59 = new javax.swing.JLabel();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -188,6 +200,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel4.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 322, 133, -1));
 
         jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, -1, -1));
 
         jTabbedPane1.addTab("Agregar Hada", jPanel4);
@@ -550,7 +567,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(tf_edadLamia1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_AletasLamia1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cb_lamias, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(305, Short.MAX_VALUE))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -624,7 +641,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(tf_nombreHamadrades1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tf_alturaHamadrade1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tf_edadHamadrades1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -696,7 +713,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(336, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -768,7 +785,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(tf_alturaSalamandras1, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
                             .addComponent(tf_edadSalamandras1, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
                             .addComponent(tf_NAlasSalamandras1))))
-                .addContainerGap(340, Short.MAX_VALUE))
+                .addContainerGap(345, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -818,6 +835,128 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Modificar/Eliminar", jPanel13);
+
+        jLabel55.setText("Contra");
+
+        pg1.setForeground(new java.awt.Color(255, 51, 0));
+        pg1.setToolTipText("");
+        pg1.setValue(100);
+        pg1.setStringPainted(true);
+        pg1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                pg1StateChanged(evt);
+            }
+        });
+
+        jLabel56.setText("Hada 2");
+
+        jLabel57.setText("Salud 1");
+
+        pg2.setValue(100);
+        pg2.setStringPainted(true);
+        pg2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                pg2StateChanged(evt);
+            }
+        });
+
+        jLabel58.setText("Salud 2");
+
+        jButton10.setText("Figh");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jLabel59.setText("Hada 1");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(jLabel57)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel58)
+                .addGap(172, 172, 172))
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addComponent(jLabel59)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel56)
+                .addGap(143, 143, 143))
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cb_player1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pg1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                        .addComponent(jLabel55)
+                        .addGap(106, 106, 106)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pg2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_player2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(63, 63, 63))))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(jLabel59)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel56)
+                        .addGap(37, 37, 37)))
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_player2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_player1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel55))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel58)
+                    .addComponent(jLabel57))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pg2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pg1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
+        );
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 664, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel12Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 456, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel12Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Pelea", jPanel12);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -915,14 +1054,14 @@ public class Principal extends javax.swing.JFrame {
         cb_lamias.getItemAt(cb_lamias.getSelectedIndex()).setEstatura(altura);
         cb_lamias.getItemAt(cb_lamias.getSelectedIndex()).setEdad(edad);
         cb_lamias.getItemAt(cb_lamias.getSelectedIndex()).setBranquias(branquias);
-        cb_lamias.getItemAt(cb_lamias.getSelectedIndex()).setAleta(aletas);
+        cb_lamias.getItemAt(cb_lamias.getSelectedIndex()).setAletas(aletas);
 
         JOptionPane.showMessageDialog(this, "Se a modificado exitosamente");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 
-        ap.cargarArchivoBinario();
+        ap.cargarArchivo();
 
         String Nombre;
         int edad;
@@ -971,7 +1110,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        ap.cargarArchivoBinario();
+        ap.cargarArchivo();
 
         int alas;
         String Nombre;
@@ -997,7 +1136,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        ap.cargarArchivoBinario();
+        ap.cargarArchivo();
 
         String Nombre;
         int edad;
@@ -1031,6 +1170,170 @@ public class Principal extends javax.swing.JFrame {
     private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField14ActionPerformed
+
+    private void pg1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pg1StateChanged
+        
+    }//GEN-LAST:event_pg1StateChanged
+
+    private void pg2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pg2StateChanged
+       
+    }//GEN-LAST:event_pg2StateChanged
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+
+        if (ap1.getPlayer1() instanceof Hamadriades && ap2.getPlayer2()instanceof Salamandras){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1() instanceof Hamadriades && ap2.getPlayer2()instanceof Hamadriades){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+
+        if (ap1.getPlayer1()instanceof Salamandras && ap2.getPlayer2()instanceof Silfides){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1()instanceof Salamandras && ap2.getPlayer2()instanceof Hamadriades){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1()instanceof Salamandras && ap2.getPlayer2()instanceof Salamandras){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1()instanceof Hamadriades && ap2.getPlayer2() instanceof Lamias){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1()instanceof Hamadriades && ap2.getPlayer2()instanceof Silfides){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        }
+
+        if (ap1.getPlayer1() instanceof Lamias && ap2.getPlayer2() instanceof Silfides){
+            ap1 = new Hilo(pg1, pg2,
+                cb_player1.getItemAt(cb_player1.getSelectedIndex()),
+                cb_player2.getItemAt(cb_player2.getSelectedIndex()));
+            ap2 = new Hilo(pg1, pg2,
+                cb_player1.getItemAt(cb_player1.getSelectedIndex()),
+                cb_player2.getItemAt(cb_player2.getSelectedIndex()));
+
+            ap1.start();
+            ap2.start();
+        }
+
+        if (ap1.getPlayer1() instanceof Lamias && ap2.getPlayer2() instanceof Salamandras){
+            ap1 = new Hilo(pg1, pg2,
+                (Hadas)cb_player1.getSelectedItem(),
+                (Hadas)cb_player2.getSelectedItem());
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1()instanceof Salamandras && ap2.getPlayer2()instanceof Lamias){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+
+        if (ap1.getPlayer1()instanceof Lamias && ap2.getPlayer2()instanceof Hamadriades){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1() instanceof Lamias && ap2.getPlayer2() instanceof Lamias){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1()instanceof Silfides && ap2.getPlayer2() instanceof Lamias){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1() instanceof Silfides && ap2.getPlayer2()instanceof Salamandras){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1()instanceof Silfides && ap2.getPlayer2() instanceof Hamadriades){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+        if (ap1.getPlayer1()instanceof Silfides && ap2.getPlayer2()instanceof Silfides){
+            ap1 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+            ap2 = new Hilo(pg1, pg2, (Hadas)cb_player1.getSelectedItem(), (Hadas)cb_player2.getSelectedItem());
+
+            ap1.start();
+            ap2.start();
+        }
+
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ap.cargarArchivo();
+        
+        
+        String Nombre;
+        int edad;
+        float altura;
+        float salud = 475;
+        float poder = 57;
+        int branquias;
+        int aletas;
+        
+        Nombre = tf_nombreLamia.getText();
+        edad = Integer.parseInt(tf_edadLamia.getText());
+        altura= Float.parseFloat(tf_alturaLamias.getText());
+        branquias = Integer.parseInt(tf_NBranquiasLamias.getText());
+        aletas = Integer.parseInt(tf_AletasLamia.getText());
+        
+        Hadas x = new Lamias(aletas, branquias, Nombre, altura, poder, salud, edad);
+        
+        hadas.add(x);
+        ap.setHada(x);
+        
+        JOptionPane.showMessageDialog(this, "Se a agregado exitosamente");
+        
+            
+       
+        
+        
+        ap.escribirArchivo();
+        JOptionPane.showMessageDialog(this, "Usuario guardado exitosamente");
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1087,8 +1390,11 @@ catch (javax.swing.UnsupportedLookAndFeelException ex) {
     private javax.swing.JComboBox<Hamadriades> cb_Hamadrades;
     private javax.swing.JComboBox<Salamandras> cb_Salamandras;
     private javax.swing.JComboBox<Lamias> cb_lamias;
+    private javax.swing.JComboBox<Hadas> cb_player1;
+    private javax.swing.JComboBox<Hadas> cb_player2;
     private javax.swing.JComboBox<Silfides> cb_silfides;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1147,6 +1453,11 @@ catch (javax.swing.UnsupportedLookAndFeelException ex) {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1155,8 +1466,10 @@ catch (javax.swing.UnsupportedLookAndFeelException ex) {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
@@ -1185,6 +1498,8 @@ catch (javax.swing.UnsupportedLookAndFeelException ex) {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JProgressBar pg1;
+    private javax.swing.JProgressBar pg2;
     private javax.swing.JTextField tf_AletasLamia;
     private javax.swing.JTextField tf_AletasLamia1;
     private javax.swing.JTextField tf_NAlasSalamandras;

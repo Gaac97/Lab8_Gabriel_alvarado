@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Hadas {
       
-    private static final long SerialVersionUID = 777L;
+      private static final long SerialVersionUID = 777L;
     
     protected String nombre;
     protected float estatura;
@@ -81,7 +81,5 @@ public class Hadas {
     public String toString() {
         return "Hadas{" + "nombre=" + nombre + ", estatura=" + estatura + ", poder=" + poder + ", salud=" + salud + '}';
     }
-    
-    
    
 }

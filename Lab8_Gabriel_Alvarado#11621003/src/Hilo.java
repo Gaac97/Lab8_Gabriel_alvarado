@@ -11,7 +11,7 @@ import javax.swing.JProgressBar;
  *
  * @author Gabriel Alvarado
  */
-public class Hilo {
+public class Hilo extends Thread {
     JProgressBar p1, p2;
     Hadas player1, player2;
 

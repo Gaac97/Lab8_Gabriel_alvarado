@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -17,7 +18,7 @@ import java.util.ArrayList;
  *
  * @author Gabriel Alvarado
  */
-public class AdminHadas {
+public class AdminHadas implements Serializable {
      private ArrayList<Hadas> listaHadas = new ArrayList();
     private File archivo = null;
 
@@ -82,6 +83,7 @@ public class AdminHadas {
                         listaHadas.add(temp);
                     }
                 } catch (EOFException e) {
+                    e.printStackTrace();
                 
                 }
                 objeto.close();
