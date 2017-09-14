@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 /*
@@ -11,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author Gabriel Alvarado
  */
-public class Hadas {
+public class Hadas implements Serializable{
       
       private static final long SerialVersionUID = 777L;
     

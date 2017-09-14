@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * @author Gabriel Alvarado
  */
 public class AdminHadas implements Serializable {
-     private ArrayList<Hadas> listaHadas = new ArrayList();
+     private ArrayList<Hadas> ListHadas = new ArrayList();
     private File archivo = null;
 
     public AdminHadas() {
@@ -30,11 +30,11 @@ public class AdminHadas implements Serializable {
     }
 
     public ArrayList<Hadas> getListaHadas() {
-        return listaHadas;
+        return ListHadas;
     }
 
     public void setListaHadas(ArrayList<Hadas> listaHadas) {
-        this.listaHadas = listaHadas;
+        this.ListHadas = listaHadas;
     }
 
     public File getArchivo() {
@@ -46,7 +46,7 @@ public class AdminHadas implements Serializable {
     }
 
     public void setHada(Hadas hada) {
-        listaHadas.add(hada);
+        ListHadas.add(hada);
     }
 
     public void escribirArchivo() {
@@ -55,7 +55,7 @@ public class AdminHadas implements Serializable {
         try {
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
-            for (Hadas t : listaHadas) {
+            for (Hadas t : ListHadas) {
                 bw.writeObject(t);
             }
             bw.flush();
@@ -71,7 +71,7 @@ public class AdminHadas implements Serializable {
 
     public void cargarArchivo() {//pasar del rom al ram!
         try {
-            listaHadas = new ArrayList();
+            ListHadas = new ArrayList();
 
             Hadas temp;
             if (archivo.exists()) {
@@ -80,10 +80,10 @@ public class AdminHadas implements Serializable {
 
                 try {
                     while ((temp = (Hadas) objeto.readObject()) != null) {
-                        listaHadas.add(temp);
+                        ListHadas.add(temp);
                     }
                 } catch (EOFException e) {
-                    e.printStackTrace();
+                   
                 
                 }
                 objeto.close();
