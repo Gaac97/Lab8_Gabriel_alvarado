@@ -5,6 +5,7 @@
  */
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -157,10 +158,17 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -965,8 +973,21 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.setText("Abrir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Guardar ");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
 
@@ -1071,6 +1092,7 @@ public class Principal extends javax.swing.JFrame {
         cb_lamias.getItemAt(cb_lamias.getSelectedIndex()).setAletas(aletas);
 
         JOptionPane.showMessageDialog(this, "Se a modificado exitosamente");
+       
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -1114,10 +1136,7 @@ public class Principal extends javax.swing.JFrame {
 
         hadas.add(new Salamandras(alas, Nombre, altura, poder, salud, edad));
 
-        Hadas x = new Salamandras(alas, Nombre, altura, poder, salud, edad);
-
-        hadas.add(x);
-        ap.setHada(x);
+  
 
         JOptionPane.showMessageDialog(this, "Se a agregado exitosamente");
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -1142,10 +1161,6 @@ public class Principal extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(this, "Se a agregado exitosamente");
 
-        Hadas x = new Silfides(alas, Nombre, altura, poder, salud, edad);
-
-        hadas.add(x);
-        ap.setHada(x);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1169,12 +1184,7 @@ public class Principal extends javax.swing.JFrame {
         Hadas x = new Lamias(aletas, branquias, Nombre, altura, poder, salud, edad);
 
         hadas.add(x);
-        ap.setHada(x);
-
-        JOptionPane.showMessageDialog(this, "Se a agregado exitosamente");
-
-        ap.escribirArchivo();
-
+        
 
       
 
@@ -1198,153 +1208,128 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
 
-        if (ap1.getPlayer1() instanceof Hamadriades && ap2.getPlayer2() instanceof Salamandras) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap1.start();
-            ap2.start();
+        if (h.getPlayer1() instanceof Hamadriades && h2.getPlayer2() instanceof Salamandras) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h.start();
+            h2.start();
         }
-        if (ap1.getPlayer1() instanceof Hamadriades && ap2.getPlayer2() instanceof Hamadriades) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+        if (h.getPlayer1() instanceof Hamadriades && h2.getPlayer2() instanceof Hamadriades) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
 
-            ap1.start();
-            ap2.start();
-        }
-
-        if (ap1.getPlayer1() instanceof Salamandras && ap2.getPlayer2() instanceof Silfides) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-
-            ap1.start();
-            ap2.start();
-        }
-        if (ap1.getPlayer1() instanceof Salamandras && ap2.getPlayer2() instanceof Hamadriades) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-
-            ap1.start();
-            ap2.start();
-        }
-        if (ap1.getPlayer1() instanceof Salamandras && ap2.getPlayer2() instanceof Salamandras) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-
-            ap1.start();
-            ap2.start();
-        }
-        if (ap1.getPlayer1() instanceof Hamadriades && ap2.getPlayer2() instanceof Lamias) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap1.start();
-            ap2.start();
-        }
-        if (ap1.getPlayer1() instanceof Hamadriades && ap2.getPlayer2() instanceof Silfides) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
 
-        if (ap1.getPlayer1() instanceof Lamias && ap2.getPlayer2() instanceof Silfides) {
-            ap1 = new Hilo(pg1, pg2,
+        if (h.getPlayer1() instanceof Salamandras && h2.getPlayer2() instanceof Silfides) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+
+            h.start();
+            h2.start();
+        }
+        if (h.getPlayer1() instanceof Salamandras && h2.getPlayer2() instanceof Hamadriades) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+
+            h.start();
+            h2.start();
+        }
+        if (h.getPlayer1() instanceof Salamandras && h2.getPlayer2() instanceof Salamandras) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+
+            h.start();
+            h2.start();
+        }
+        if (h.getPlayer1() instanceof Hamadriades && h2.getPlayer2() instanceof Lamias) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h.start();
+            h2.start();
+        }
+        if (h.getPlayer1() instanceof Hamadriades && h2.getPlayer2() instanceof Silfides) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h.start();
+            h2.start();
+        }
+
+        if (h.getPlayer1() instanceof Lamias && h2.getPlayer2() instanceof Silfides) {
+            h = new Hilo(pg1, pg2,
                     cb_player1.getItemAt(cb_player1.getSelectedIndex()),
                     cb_player2.getItemAt(cb_player2.getSelectedIndex()));
-            ap2 = new Hilo(pg1, pg2,
+            h2 = new Hilo(pg1, pg2,
                     cb_player1.getItemAt(cb_player1.getSelectedIndex()),
                     cb_player2.getItemAt(cb_player2.getSelectedIndex()));
 
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
 
-        if (ap1.getPlayer1() instanceof Lamias && ap2.getPlayer2() instanceof Salamandras) {
-            ap1 = new Hilo(pg1, pg2,
+        if (h.getPlayer1() instanceof Lamias && h2.getPlayer2() instanceof Salamandras) {
+            h = new Hilo(pg1, pg2,
                     (Hadas) cb_player1.getSelectedItem(),
                     (Hadas) cb_player2.getSelectedItem());
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
-        if (ap1.getPlayer1() instanceof Salamandras && ap2.getPlayer2() instanceof Lamias) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+        if (h.getPlayer1() instanceof Salamandras && h2.getPlayer2() instanceof Lamias) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
 
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
 
-        if (ap1.getPlayer1() instanceof Lamias && ap2.getPlayer2() instanceof Hamadriades) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+        if (h.getPlayer1() instanceof Lamias && h2.getPlayer2() instanceof Hamadriades) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
 
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
-        if (ap1.getPlayer1() instanceof Lamias && ap2.getPlayer2() instanceof Lamias) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+        if (h.getPlayer1() instanceof Lamias && h2.getPlayer2() instanceof Lamias) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
 
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
-        if (ap1.getPlayer1() instanceof Silfides && ap2.getPlayer2() instanceof Lamias) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+        if (h.getPlayer1() instanceof Silfides && h2.getPlayer2() instanceof Lamias) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
 
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
-        if (ap1.getPlayer1() instanceof Silfides && ap2.getPlayer2() instanceof Salamandras) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+        if (h.getPlayer1() instanceof Silfides && h2.getPlayer2() instanceof Salamandras) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
 
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
-        if (ap1.getPlayer1() instanceof Silfides && ap2.getPlayer2() instanceof Hamadriades) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+        if (h.getPlayer1() instanceof Silfides && h2.getPlayer2() instanceof Hamadriades) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
 
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
-        if (ap1.getPlayer1() instanceof Silfides && ap2.getPlayer2() instanceof Silfides) {
-            ap1 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
-            ap2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+        if (h.getPlayer1() instanceof Silfides && h2.getPlayer2() instanceof Silfides) {
+            h = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
+            h2 = new Hilo(pg1, pg2, (Hadas) cb_player1.getSelectedItem(), (Hadas) cb_player2.getSelectedItem());
 
-            ap1.start();
-            ap2.start();
+            h.start();
+            h2.start();
         }
 
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        ap.cargarArchivo();
-
-        String Nombre;
-        int edad;
-        float altura;
-        float salud = 475;
-        float poder = 57;
-        int branquias;
-        int aletas;
-
-        Nombre = tf_nombreLamia.getText();
-        edad = Integer.parseInt(tf_edadLamia.getText());
-        altura = Float.parseFloat(tf_alturaLamias.getText());
-        branquias = Integer.parseInt(tf_NBranquiasLamias.getText());
-        aletas = Integer.parseInt(tf_AletasLamia.getText());
-
-        Hadas x = new Lamias(aletas, branquias, Nombre, altura, poder, salud, edad);
-
-        hadas.add(x);
-        ap.setHada(x);
-
-        JOptionPane.showMessageDialog(this, "Se a agregado exitosamente");
-
-        ap.escribirArchivo();
-        JOptionPane.showMessageDialog(this, "Usuario guardado exitosamente");
-
+        JOptionPane.showMessageDialog(this, "Boton no disponible");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
@@ -1358,6 +1343,75 @@ public class Principal extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    if (ap.getArchivo() == null) {
+            JFileChooser jfc = new JFileChooser();
+            int seleccion = jfc.showSaveDialog(this);
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
+                ap.setArchivo(jfc.getSelectedFile());
+                ap.escribirArchivo();
+            }
+        } else {
+            ap.escribirArchivo();
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+     DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Silfides) {
+                model.addElement(t);
+            }
+        }
+        cb_silfides.setModel(model);
+        
+        model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Salamandras) {
+                model.addElement(t);
+            }
+        }
+        cb_Salamandras.setModel(model);
+        model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Hamadriades) {
+                model.addElement(t);
+            }
+        }
+        cb_Hamadrades.setModel(model);
+        model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+            if (t instanceof Lamias) {
+                model.addElement(t);
+            }
+        }
+        cb_lamias.setModel(model);
+        
+        model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+               model.addElement(t);
+           
+        }
+        cb_player1.setModel(model);
+        
+        model = new DefaultComboBoxModel();
+        for (Hadas t : hadas) {
+               model.addElement(t);
+           
+        }
+        cb_player2.setModel(model);
+        
+        
+                                             
+
+    
+    String carpeta_guardada;
+    }//GEN-LAST:event_jTabbedPane1StateChanged
 
     /**
      * @param args the command line arguments
@@ -1478,6 +1532,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -1552,6 +1607,6 @@ public class Principal extends javax.swing.JFrame {
 
     ArrayList<Hadas> hadas = new ArrayList();
     static AdminHadas ap = new AdminHadas("./Hadas.cbm");
-    Hilo ap1;
-    Hilo ap2;
+    Hilo h;
+    Hilo h2;
 }

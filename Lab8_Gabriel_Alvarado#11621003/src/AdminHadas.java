@@ -69,7 +69,7 @@ public class AdminHadas implements Serializable {
         }
     }
 
-    public void cargarArchivo() {//pasar del rom al ram!
+    public void cargarArchivo() {
         try {
             ListHadas = new ArrayList();
 
@@ -83,7 +83,7 @@ public class AdminHadas implements Serializable {
                         ListHadas.add(temp);
                     }
                 } catch (EOFException e) {
-                   
+                  
                 
                 }
                 objeto.close();
